@@ -37,7 +37,7 @@ public class CurrencyConversionController {
 //	}
 	
 	  @GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
-	  @HystrixCommand
+	  @HystrixCommand(fallbackMethod="getDefaultConvertCurrency")
 	  public CurrencyConversionBean convertCurrencyFeign(@PathVariable String from, @PathVariable String to,
 	      @PathVariable BigDecimal quantity) {
 
@@ -49,4 +49,11 @@ public class CurrencyConversionController {
 
 	    return CurrencyConversionBean.generateCurrencyConversionBeanFromForex(response);
 	  }
+	  
+	  public CurrencyConversionBean getDefaultConvertCurrency( String from,  String to,
+		       BigDecimal quantity) {
+
+
+		    return new CurrencyConversionBean(null, from, to, null, quantity, null, 0);
+		  }
 }
