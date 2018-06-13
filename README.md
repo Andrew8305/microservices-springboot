@@ -13,6 +13,10 @@ Responsible to convert and exchange some quantity of a currency to another
 
 <img width="880" alt="Functional services" src="https://raw.githubusercontent.com/BruhMeh/microservices-springboot/master/Business%20Services.png">
 
+#### Cloud Architecture
+There's a lot of patterns for cloud archtecture using distributed systems. Spring Cloud provides some of the tools necessary for these patterns. In the diagram bellow I described how the architecture will be implemented and waht tool I'll use for this project
+
+<img width="880" alt="Functional services" src="https://raw.githubusercontent.com/BruhMeh/microservices-springboot/master/Infrastructure%20Services.png">
 
 
 
